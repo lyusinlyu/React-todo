@@ -21,7 +21,7 @@ const LoginContainer = () => {
         autoClose: 2000,
       });
       setTimeout(() => {
-        navigate(routeCodes.REGISTER);
+        navigate(routeCodes.HOMEPAGE);
       }, 2200);
     } catch (error) {
       if(error.response && error.response.status) {
