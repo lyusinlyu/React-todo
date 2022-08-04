@@ -50,6 +50,7 @@ module.exports = {
       "gray-plain": "#8E8E93",
       "gray-light": "#F2F2F7",
       "blue-primary": "#3A85F7",
+      "red": "#DC143c",
     }),
     columns: {
       auto: 'auto',
