@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'assets/css/index.css';
-// import Login from 'views/login';
-import Register from 'views/register';
+import AppRoutes from 'routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Register />
+    <AppRoutes />
   </React.StrictMode>
 );

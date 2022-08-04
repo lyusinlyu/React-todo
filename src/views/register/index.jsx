@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import { routeCodes } from 'routes'
 import './index.css';
 
 const Register = ({
@@ -121,7 +123,7 @@ const Register = ({
       </form>
 
       <p className='text-gray-plain text-left text-sm mt-5'>Already have an account?
-        <a to='/login' className='text-blue-primary ml-1.5 underline'>Log in</a>
+        <Link to={ routeCodes.LOGIN } className='text-blue-primary ml-1.5 underline'>Log in</Link>
       </p>
     </div>
   );

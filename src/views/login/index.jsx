@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import { routeCodes } from 'routes';
 import './index.css';
 
 const Login = ({
   isFormLoading,
   onSubmit,
 }) => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -97,7 +98,7 @@ const Login = ({
       </form>
 
       <p className='text-gray-plain text-left text-sm mt-5'>Dont have an account yet?
-        <a to='/register' className='text-blue-primary ml-1.5 underline'>Register</a>
+        <Link to={ routeCodes.REGISTER } className='text-blue-primary ml-1.5 underline'>Register</Link>
       </p>
     </div>
   );
