@@ -75,7 +75,6 @@ const Register = ({
                   name='name'
                   className='todo-input credentials-input text-gray-plain placeholder-gray-plain'
                   onChange={ handleChange }
-                  required
                   autoComplete={ "true" }
                 />
               </label>
