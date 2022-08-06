@@ -6,6 +6,7 @@ import { store } from 'state/store'
 import { Provider } from 'react-redux'
 import 'assets/css/index.css';
 import 'react-toastify/dist/ReactToastify.css';
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

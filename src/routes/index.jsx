@@ -12,6 +12,7 @@ import Guest from "./guards/Guest";
 import LoginContainer from "containers/login";
 import RegisterContainer from "containers/register";
 import HomepageContainer from "containers/homepage";
+import TodosListByDateContainer from "containers/todos-list-by-date";
 
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path={ routeCodes.HOMEPAGE } element={ <Authenticated component={ HomepageContainer } /> } />
+        <Route path={ routeCodes.TODOS_LIST_DATE } element={ <Authenticated component={ TodosListByDateContainer } /> } />
         <Route path={ routeCodes.LOGIN } element={ <Guest component={ LoginContainer } /> } />
         <Route path={ routeCodes.REGISTER } element={ <Guest component={ RegisterContainer } /> } />
       </Routes>

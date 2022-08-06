@@ -7,7 +7,6 @@ import Auth from 'helpers/Auth';
 const initSite = createAsyncThunk(
   'main/initSite',
   async () => {
-    console.log('slice initSite')
     if(!Auth.isTokenExists()) {
       return Promise.resolve(null);
     }

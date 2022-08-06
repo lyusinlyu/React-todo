@@ -20,7 +20,6 @@ client.interceptors.response.use(
   },
   error => {
     if(error.response && error.response.status === 401) {
-      console.log('axiosna')
       // Auth.logout();
       // Auth.redirectSignIn('', () => {
       //   store.dispatch(push(Router.route('SIGN_IN').getCompiledPath()));
@@ -32,4 +31,24 @@ client.interceptors.response.use(
 
 export function initSiteDetails() {
   return client.get(`${ apiUrl }/api/me`);
+}
+
+export function createTodo(data) {
+  return client.post(`${ apiUrl }/api/todos`, data);
+}
+
+export function getTodosList() {
+  return client.get(`${ apiUrl }/api/todos-list-by-date`);
+}
+
+export function getTodosListByDate(date) {
+  return client.get(`${ apiUrl }/api/todos-list-by-date/${ date }`);
+}
+
+export function updateTodo(id, data) {
+  return client.put(`${ apiUrl }/api/todos/${ id }`, data);
+}
+
+export function deleteTodo(id) {
+  return client.delete(`${ apiUrl }/api/todos/${ id }`);
 }

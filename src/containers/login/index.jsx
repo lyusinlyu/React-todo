@@ -7,7 +7,7 @@ import { routeCodes } from "routes";
 import Auth from 'helpers/Auth';
 import { useDispatch } from "react-redux";
 import { setSiteInited } from "state/main/mainSlice";
-
+import { handleAxiosDefautError } from 'helpers/ErrorHandler';
 
 const LoginContainer = () => {
   const navigate = useNavigate();
@@ -28,26 +28,7 @@ const LoginContainer = () => {
         navigate(routeCodes.HOMEPAGE);
       }, 2200);
     } catch (error) {
-      if(error.response && error.response.status) {
-        switch (error.response.status) {
-          case 401 : {
-            toast.error('Invalid credentials');
-            break;
-          }
-          case 422 : {
-            const errors = error.response.data.errors;
-            Object.keys(errors).forEach(key => {
-              toast.error(errors[key][0]);
-            });
-            break;
-          }
-          default: {
-            toast.error('Something went wrong');
-          }
-        }
-      } else {
-        toast.error('Something went wrong');
-      }
+      handleAxiosDefautError(error);
       setIsRequestInProgress(false);
     }
   };

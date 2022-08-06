@@ -13,7 +13,6 @@ const Guest = ({
   const mainState = useSelector((state) => state.main);
   const { isSiteInited, authUser } = mainState;
   useEffect(() => {
-    console.log('mounted Guest')
     if(!isSiteInited) {
       dispatch(initSite());
     }

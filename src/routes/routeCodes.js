@@ -4,3 +4,4 @@ export const REGISTER = '/register';
 
 // auth routes
 export const HOMEPAGE = '/';
+export const TODOS_LIST_DATE = '/todos/:date';

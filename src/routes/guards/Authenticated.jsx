@@ -14,7 +14,6 @@ const Authenticated = ({
   const { isSiteInited, authUser } = mainState;
 
   useEffect(() => {
-    console.log('mounted Auth')
     if(!isSiteInited) {
       dispatch(initSite());
     }
