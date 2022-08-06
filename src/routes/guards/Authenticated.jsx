@@ -4,6 +4,7 @@ import { initSite } from 'state/main/mainSlice';
 import { useNavigate } from 'react-router-dom';
 import { routeCodes } from 'routes';
 import { PropTypes } from 'prop-types';
+import Auth from 'helpers/Auth';
 
 const Authenticated = ({
   component: ChildComponent,
@@ -27,7 +28,17 @@ const Authenticated = ({
 
   if(isSiteInited && authUser) {
     return (
-      <ChildComponent />
+      <>
+        <button
+          onClick={ () => {
+            Auth.deleteToken();
+            window.location.reload();
+          } }
+        >
+          Logout
+        </button>
+        <ChildComponent />
+      </>
     )
   }
   return null;

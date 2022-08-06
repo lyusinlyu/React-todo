@@ -11,8 +11,9 @@ const TodoRow = ({
   todo,
   onTodoUpdate,
   onTodoDelete,
+  editing,
+  onEditingItemIdSet,
 }) => {
-  const [editing, setEditing] = useState(false);
   const [editingTitle, setEditingTitle] = useState('');
   const editingInputRef = useRef();
   useEffect(() => {
@@ -70,7 +71,7 @@ const TodoRow = ({
                   title: editingTitle,
                 };
                 onTodoUpdate(newTodo);
-                setEditing(false);
+                onEditingItemIdSet(null);
               } }
               className='edit-action'
               role='presentation'
@@ -79,7 +80,7 @@ const TodoRow = ({
             </span>
             <span
               onClick={ () => {
-                setEditing(false);
+                onEditingItemIdSet(null);
               } }
               role='presentation'
               className='delete-action'
@@ -94,7 +95,7 @@ const TodoRow = ({
               role='presentation'
               onClick={ () => {
                 setEditingTitle(todo.title);
-                setEditing(true);
+                onEditingItemIdSet(todo.id);
               } }
             >
               Edit
@@ -116,14 +117,18 @@ const TodoRow = ({
 
 TodoRow.propTypes = {
   todo: PropTypes.object,
+  editing: PropTypes.bool,
   onTodoUpdate: PropTypes.func,
   onTodoDelete: PropTypes.func,
+  onEditingItemIdSet: PropTypes.func,
 };
 
 TodoRow.defaultProps = {
   todo: {},
+  editing: false,
   onTodoUpdate: console.log,
   onTodoDelete: console.log,
+  onEditingItemIdSet: console.log,
 };
 
 export default TodoRow;

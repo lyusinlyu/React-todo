@@ -1,4 +1,6 @@
-import React from "react";
+import React, {
+  useState,
+} from "react";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { routeCodes } from 'routes';
@@ -13,7 +15,7 @@ const ListByDate = ({
   onTodoUpdate,
   onTodoDelete,
 }) => {
-
+  const [editingTodoId, setEditingTodoId] = useState(null);
   return (
     <div className='todo-app bg-white'>
       <div className='flex justify-start items-center mb-2'>
@@ -36,6 +38,8 @@ const ListByDate = ({
                 todo={ todo }
                 onTodoUpdate={ onTodoUpdate }
                 onTodoDelete={ onTodoDelete }
+                editing={ editingTodoId === todo.id }
+                onEditingItemIdSet={ setEditingTodoId }
               />
             )
           })

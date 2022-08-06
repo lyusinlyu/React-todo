@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Auth from 'helpers/Auth';
+import { toast } from 'react-toastify';
 // eslint-disable-next-line no-undef
 const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 
@@ -20,10 +21,11 @@ client.interceptors.response.use(
   },
   error => {
     if(error.response && error.response.status === 401) {
-      // Auth.logout();
-      // Auth.redirectSignIn('', () => {
-      //   store.dispatch(push(Router.route('SIGN_IN').getCompiledPath()));
-      // });
+      Auth.deleteToken();
+      toast.error('Unauthorized')
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     }
     throw error;
   }

@@ -7,6 +7,10 @@ class Auth {
     return localStorage.getItem('token');
   }
 
+  static deleteToken() {
+    return localStorage.removeItem('token');
+  }
+
   static isTokenExists() {
     return !!localStorage.getItem('token');
   }

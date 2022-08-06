@@ -74,6 +74,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 2. Guards + 
 3. Lazy loading
 4. Redux + 
-5. Interceptors
-6. app bootstrap part
-7. Todo page
+5. Interceptors +
+6. app bootstrap part +
+7. Todo page +
+8. Logout + 
+9. Edit cases
