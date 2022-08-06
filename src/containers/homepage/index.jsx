@@ -16,7 +16,11 @@ const HomepageContainer = () => {
     async function init() {
       const response = await getTodosList();
       setIsDataInited(true);
-      setTodosListByDate(response.data.todos);
+      const todos = response.data.todos;
+      const isObject = todos.length === undefined;
+      if(isObject) {
+        setTodosListByDate(todos);
+      }
     }
     init();
   }, [])
