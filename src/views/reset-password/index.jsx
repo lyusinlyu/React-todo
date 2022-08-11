@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
-import { routeCodes } from 'routes';
 import './index.css';
-import { FORGOT_PASSWORD } from "../../routes/routeCodes";
 
-const Login = ({
+const ResetPassword = ({
   isFormLoading,
   onSubmit,
 }) => {
@@ -53,7 +50,7 @@ const Login = ({
   return (
     <div className='todo-app auth'>
       <form onSubmit={ handleSubmit } className='text-left'>
-        <p className='text-left text-black-plain font-semibold mb-1.5'>Login form</p>
+        <p className='text-left text-black-plain font-semibold mb-1.5'>Reset your password</p>
         <div className='todo-form'>
           <div className='flex justify-between'>
             <div className='input-container'>
@@ -91,31 +88,24 @@ const Login = ({
               </label>
             </div>
           </div>
-          <p className='text-gray-plain text-left text-sm mt-5'>
-            <Link to={ FORGOT_PASSWORD } className='text-blue-primary underline'>Forgot password?</Link>
-          </p>
         </div>
 
         <button className={ submitButtonClasses }>
-          Log in
+          Reset password
         </button>
       </form>
-
-      <p className='text-gray-plain text-left text-sm mt-5'>Dont have an account yet?
-        <Link to={ routeCodes.REGISTER } className='text-blue-primary ml-1.5 underline'>Register</Link>
-      </p>
     </div>
   );
 };
 
-Login.propTypes = {
+ResetPassword.propTypes = {
   isFormLoading: PropTypes.bool,
   onSubmit: PropTypes.func,
 };
 
-Login.defaultProps = {
+ResetPassword.defaultProps = {
   isFormLoading: false,
   onSubmit: console.log,
 };
 
-export default Login;
+export default ResetPassword;

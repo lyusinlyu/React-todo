@@ -14,3 +14,11 @@ export function login(data) {
 export function register(data) {
   return client.post(`${ apiUrl }/api/register`, data);
 }
+
+export function forgotPassword(data) {
+  return client.post(`${ apiUrl }/api/forget-password`, data);
+}
+
+export function resetPassword(token, data) {
+  return client.post(`${ apiUrl }/api/reset-password/${ token }`, data);
+}
